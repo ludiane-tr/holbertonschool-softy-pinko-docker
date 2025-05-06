@@ -1,8 +1,11 @@
-# This Dockerfile is based on the latest ubuntu version
+# Use the latest version of Ubuntu
 FROM ubuntu:latest
 
-# Command to execute the image and the configuration
-RUN apt-get update && apt-get upgrade -y
+# Update package list
+RUN apt-get update
 
-# Define the execution of the container
+# Upgrade installed packages
+RUN apt-get upgrade -y
+
+# Use JSON array syntax to avoid signal issues
 CMD ["echo", "Hello, World!"]
